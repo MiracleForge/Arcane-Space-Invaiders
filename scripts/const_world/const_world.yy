@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"const_world",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"const_world",
+  "parent":{
+    "name":"World",
+    "path":"folders/Scripts/Constants/World.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
