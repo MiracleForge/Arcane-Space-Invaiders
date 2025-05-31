@@ -2,9 +2,12 @@ function space_ship_create() constructor {
     shield = 0;
     shieldCapacity = 300;
     metalicBelt = 200;
-    mov_speed = 3;
     overheatStatus = 0;
     overheatCapacity = 200;
+    mov_speed = 0.7;
+    max_speed = 4;
+    mass = 0.5;
+    acceleration = 2;
     shootOn = false;
 
     rechargeShield = function(amount) {
