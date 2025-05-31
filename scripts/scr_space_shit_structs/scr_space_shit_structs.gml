@@ -2,7 +2,7 @@ function space_ship_create() constructor {
     shield = 0;
     shieldCapacity = 300;
     metalicBelt = 200;
-    mov_speed = 5;
+    mov_speed = 3;
     overheatStatus = 0;
     overheatCapacity = 200;
     shootOn = false;
@@ -18,4 +18,5 @@ function space_ship_create() constructor {
     };
     
     sprite_index = spr_USS_Cerulean;
+    image_angle = -90;
 }

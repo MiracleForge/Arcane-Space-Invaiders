@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"_input_config_verb",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"_input_config_verb",
+  "parent":{
+    "name":"Config",
+    "path":"folders/Scripts/Config.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
