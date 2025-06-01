@@ -52,6 +52,7 @@
     {"id":{"name":"const_inputs","path":"scripts/const_inputs/const_inputs.yy",},},
     {"id":{"name":"const_world","path":"scripts/const_world/const_world.yy",},},
     {"id":{"name":"scr_player_ship_structs","path":"scripts/scr_player_ship_structs/scr_player_ship_structs.yy",},},
+    {"id":{"name":"scr_state_machine","path":"scripts/scr_state_machine/scr_state_machine.yy",},},
     {"id":{"name":"spr_player_bullets","path":"scripts/spr_player_bullets/spr_player_bullets.yy",},},
     {"id":{"name":"src_player_state","path":"scripts/src_player_state/src_player_state.yy",},},
     {"id":{"name":"spr_bullet_basic","path":"sprites/spr_bullet_basic/spr_bullet_basic.yy",},},

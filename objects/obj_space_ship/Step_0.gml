@@ -1,5 +1,7 @@
-data.rechargeShield(200)
+data.restoreShield(200);
+run_state();
+//global.player_data = data;
 
-global.player_data = data;
-src_player_moviment();
+
+
 
