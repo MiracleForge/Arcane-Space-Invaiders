@@ -1,4 +1,4 @@
 data.shootOn = true;
-data.fireBullet(x, y, sprite_height, obj_father_bullet);
+data.fireBullet();
 alarm[0] = data.shotCountdown;
 
