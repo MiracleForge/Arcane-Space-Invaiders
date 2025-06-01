@@ -1,5 +1,5 @@
 function state_player_movement(_entity) constructor {
-    entity = _entity; // Agora isso é a struct com mov_speed, etc.
+    entity = _entity;
 
     start = function() {
         show_debug_message("Entrou no estado: Movimento");

@@ -1,5 +1,5 @@
 function bullet_create () constructor {
-     vspeed = -2;
+     vspeed = -3;
      sprite_index = spr_bullet_basic;
 }
 

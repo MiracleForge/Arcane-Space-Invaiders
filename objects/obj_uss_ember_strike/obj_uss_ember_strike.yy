@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"obj_space_ship",
+  "%Name":"obj_uss_ember_strike",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -10,7 +10,7 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_space_ship",
+  "name":"obj_uss_ember_strike",
   "overriddenProperties":[],
   "parent":{
     "name":"SpaceShips",
@@ -34,7 +34,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_uss_ember_strike",
+    "path":"sprites/spr_uss_ember_strike/spr_uss_ember_strike.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
