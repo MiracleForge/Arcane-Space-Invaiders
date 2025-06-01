@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_controller_camera",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_father_bullet",
+  "eventList":[],
   "managed":true,
-  "name":"obj_controller_camera",
+  "name":"obj_father_bullet",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controllers",
-    "path":"folders/Objects/Controllers.yy",
+    "name":"Bullets",
+    "path":"folders/Objects/Bullets.yy",
   },
   "parentObjectId":null,
   "persistent":false,

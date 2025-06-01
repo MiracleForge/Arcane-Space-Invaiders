@@ -1,3 +1,3 @@
 draw_self();
-draw_text(x, y , data.shield);
+//draw_text(x, y , data.shield);
 
