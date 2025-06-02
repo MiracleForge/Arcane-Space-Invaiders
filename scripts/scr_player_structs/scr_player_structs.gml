@@ -1,15 +1,15 @@
 ///@description Constructor for Player Basic Ship
 ///@param {Id.Instance} _owner Instance Id from the owner object
 function uss_cerulean_create(_owner) constructor {
-    shield                     = 150;        ///@type real
+    shield              = 150;        ///@type real
     shieldCapacity      = 150;        ///@type real
-    metalicBelt                = 1;          ///@type real
+    metalicBelt         = 1;          ///@type real
     metalicBeltCapacity = 1;          ///@type real
-    overheatStatus             = 0;          ///@type real
+    overheatStatus      = 0;          ///@type real
     overheatCapacity    = 150;        ///@type real
-    mov_speed                  = 0.8;        ///@type real
-    mass                       = 0.5;        ///@type real
-    acceleration               = 2.5;        ///@type real
+    mov_speed           = 0.8;        ///@type real
+    mass                = 0.5;        ///@type real
+    acceleration        = 2.5;        ///@type real
     shootOn             = false;      ///@type bool
     shotCountdown       = 20;         ///@type real
 
@@ -39,7 +39,7 @@ function uss_cerulean_create(_owner) constructor {
     ///@return {Id.Instance} Referece of instance.
     fireBullet = method(self, function(constructor_ = new bullet_create()) {
         var _h = owner.sprite_height / 2;
-        instance_create_layer(owner.x, owner.y - _h, "bullets", obj_father_bullet, constructor_);
+        instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_father, constructor_);
     });
 };
 
@@ -64,8 +64,8 @@ function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) construct
     
         static missile_timer = 0;
 
-        instance_create_layer(owner.x + _w, owner.y - _h, "bullets", obj_father_bullet, constructor_);
-        instance_create_layer(owner.x - _w, owner.y - _h, "bullets", obj_father_bullet, constructor_);
+        instance_create_layer(owner.x + _w, owner.y - _h, "bullets", obj_projectile_father, constructor_);
+        instance_create_layer(owner.x - _w, owner.y - _h, "bullets", obj_projectile_father, constructor_);
     
           if (--missile_timer <= 0) {
             var missile = new bullet_missile_create();
@@ -74,7 +74,7 @@ function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) construct
             var nearest_enemy = instance_nearest(owner.x, owner.y, obj_enemy_pawn);
             missile.target = nearest_enemy;
         
-            instance_create_layer(owner.x, owner.y - _h, "bullets", obj_father_bullet, missile);
+            instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_father, missile);
             missile_timer = missile.cooldown;
         }
     });

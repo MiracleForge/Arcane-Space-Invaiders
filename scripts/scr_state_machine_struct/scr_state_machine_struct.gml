@@ -1,7 +1,7 @@
 function state() constructor {
-    start = function() {};
-    run   = function() {};
-    stop  = function() {};
+    start = method(self, function() {});
+    run   = method(self, function() {});
+    stop  = method(self, function() {});
 };
 
 function run_state() {
@@ -17,4 +17,4 @@ function change_state(_state) {
 function init_state(_state) {
     active_state = _state;
     active_state.start();
-}
+};
