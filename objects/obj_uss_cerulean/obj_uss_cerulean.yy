@@ -16,7 +16,10 @@
     "name":"SpaceShips",
     "path":"folders/Objects/SpaceShips.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_uss_father",
+    "path":"objects/obj_uss_father/obj_uss_father.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

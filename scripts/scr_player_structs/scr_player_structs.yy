@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_player_ship_structs",
+  "%Name":"scr_player_structs",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_player_ship_structs",
+  "name":"scr_player_structs",
   "parent":{
     "name":"Structs",
     "path":"folders/Scripts/Structs.yy",

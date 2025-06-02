@@ -1,9 +1,17 @@
 function bullet_create () constructor {
      vspeed = -3;
      sprite_index = spr_bullet_basic;
+     cooldown = 3;
 }
 
-function bullet_test_create () constructor {
-    speed = 4;
-     sprite_index = spr_USS_Cerulean;
+function bullet_heat_create (): bullet_create() constructor {
+    vspeed = -2;
+    sprite_index = spr_bullet_heat;
+    cooldown = 1; 
+}
+
+function bullet_missile_create (): bullet_create() constructor {
+     vspeed = -2;
+     sprite_index = spr_missile_basic;
+     cooldown = 6;
 }
