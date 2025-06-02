@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_state_machine",
+  "%Name":"scr_projectile_struct",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_state_machine",
+  "name":"scr_projectile_struct",
   "parent":{
-    "name":"PlayerScripts",
-    "path":"folders/Scripts/PlayerScripts.yy",
+    "name":"bullets",
+    "path":"folders/Scripts/Structs/bullets.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

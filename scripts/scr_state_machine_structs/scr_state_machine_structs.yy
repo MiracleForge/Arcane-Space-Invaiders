@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"spr_player_bullets",
+  "%Name":"scr_state_machine_structs",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"spr_player_bullets",
+  "name":"scr_state_machine_structs",
   "parent":{
-    "name":"bullets",
-    "path":"folders/Scripts/Structs/bullets.yy",
+    "name":"Structs",
+    "path":"folders/Scripts/Structs.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

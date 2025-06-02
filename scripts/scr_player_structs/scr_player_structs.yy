@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_player_structs",
   "parent":{
-    "name":"Structs",
-    "path":"folders/Scripts/Structs.yy",
+    "name":"player_struct",
+    "path":"folders/Scripts/Structs/player_struct.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
