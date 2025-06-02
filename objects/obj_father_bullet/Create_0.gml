@@ -1,1 +1,1 @@
-target = obj_enemy_pawn
+if (!variable_instance_exists(id, "target")) target = noone;
