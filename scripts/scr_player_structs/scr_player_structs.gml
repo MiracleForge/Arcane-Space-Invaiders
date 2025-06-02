@@ -2,16 +2,16 @@
 ///@param {Id.Instance} _owner Instance Id from the owner object
 function uss_cerulean_create(_owner) constructor {
     shield                     = 150;        ///@type real
-    static shieldCapacity      = 150;        ///@type real
+    shieldCapacity      = 150;        ///@type real
     metalicBelt                = 1;          ///@type real
-    static metalicBeltCapacity = 1;          ///@type real
+    metalicBeltCapacity = 1;          ///@type real
     overheatStatus             = 0;          ///@type real
-    static overheatCapacity    = 150;        ///@type real
+    overheatCapacity    = 150;        ///@type real
     mov_speed                  = 0.8;        ///@type real
     mass                       = 0.5;        ///@type real
     acceleration               = 2.5;        ///@type real
-    static shootOn             = false;      ///@type bool
-    static shotCountdown       = 20;         ///@type real
+    shootOn             = false;      ///@type bool
+    shotCountdown       = 20;         ///@type real
 
     owner = _owner; // Keep the instance that own this struct.
     state_movement = new state_player_movement(self); // Start machineState
@@ -51,7 +51,7 @@ function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) construct
     static shieldCapacity      = 300;        ///@type real
     static overheatCapacity    = 200;        ///@type real
     mov_speed                  = 0.5;        ///@type real
-    static mass                = 0.7;        ///@type real
+    mass                       = 0.7;        ///@type real
     acceleration               = 1.2;        ///@type real
     shotCountdown              = 40;         ///@type real
 
@@ -67,10 +67,15 @@ function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) construct
         instance_create_layer(owner.x + _w, owner.y - _h, "bullets", obj_father_bullet, constructor_);
         instance_create_layer(owner.x - _w, owner.y - _h, "bullets", obj_father_bullet, constructor_);
     
-        if (--missile_timer <= 0) {
+          if (--missile_timer <= 0) {
             var missile = new bullet_missile_create();
+            
+            // Procurar o inimigo mais próximo
+            var nearest_enemy = instance_nearest(owner.x, owner.y, obj_enemy_pawn);
+            missile.target = nearest_enemy;
+        
             instance_create_layer(owner.x, owner.y - _h, "bullets", obj_father_bullet, missile);
             missile_timer = missile.cooldown;
         }
-});
+    });
 };
