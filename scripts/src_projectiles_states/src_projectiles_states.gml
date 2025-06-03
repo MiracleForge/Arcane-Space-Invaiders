@@ -1,3 +1,5 @@
+///@description Constructor for follow state
+///@param {Id.Instance} _entity Instance Id from owner instance
 function state_projectile_follow(_entity) constructor {
     entity = _entity;
      
@@ -10,7 +12,6 @@ function state_projectile_follow(_entity) constructor {
     run = function() {
         if (instance_exists(entity.target)) { 
      
-        show_debug_message("entro no run")
             var desired_angle = point_direction(entity.x, entity.y, entity.target.x, entity.target.y);
             var angle_diff = angle_difference(desired_angle, entity.direction);
             

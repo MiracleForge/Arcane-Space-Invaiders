@@ -59,18 +59,21 @@ function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) construct
     ///@param {struct} [constructor_] Bullet Data. Default: `new bullet_create()`.
     ///@return {Id.Instance} Referece of instance.
     fireBullet = method(self, function(constructor_ = new scr_bullet_create ()) {
-        var _h = owner.sprite_height * 0.5;
-        var _w = owner.sprite_width * 0.5;
-    
-        static missile_timer = 0;
+     var half_h = owner.sprite_height * 0.5; 
+     var half_w = owner.sprite_width * 0.5;
 
-        instance_create_layer(owner.x + _w, owner.y - _h, "bullets", obj_projectile_father, constructor_);
-        instance_create_layer(owner.x - _w, owner.y - _h, "bullets", obj_projectile_father, constructor_);
+    
+     static missile_timer = 0;
+
+     var bullet_data = constructor_;
+     instance_create_layer(owner.x + half_w, owner.y - half_h, "bullets", obj_projectile_father, bullet_data);
+     instance_create_layer(owner.x - half_w, owner.y - half_h, "bullets", obj_projectile_father, bullet_data);
+
     
         if (--missile_timer <= 0) {
         show_debug_message("entrou no missil ")
-         var missile = new src_bullet_missile_create(); var inst =instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_missil, missile); missile.state_machine = new state_projectile_follow(other); 
-            missile_timer = missile.cooldown;
+             var missile = new src_bullet_missile_create(); var inst =instance_create_layer(owner.x, owner.y -half_h, "bullets", obj_projectile_missil, missile); 
+             missile_timer = missile.cooldown;
         }
     });
 };
