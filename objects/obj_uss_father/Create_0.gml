@@ -1,3 +1,3 @@
-data = new uss_cerulean_create(id);          // cria a struct
-init_state(data.state_movement);           // inicia estado depois da struct completa
+data = new uss_cerulean_create(id);
+init_state(data.state_movement);
 alarm[0] = -1;
