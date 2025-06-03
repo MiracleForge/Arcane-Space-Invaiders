@@ -1,4 +1,4 @@
-function state_projectile_state(_entity) constructor {
+function state_projectile_follow(_entity) constructor {
     entity = _entity;
      
     start = function() {
@@ -17,7 +17,7 @@ function state_projectile_state(_entity) constructor {
             if (abs(angle_diff) < ANGLE_TOLERANCE) {
                 entity.direction = desired_angle;
             } else {
-                var turn_factor = clamp(abs(angle_diff) / ANGLE_TURN_DIVISOR, MIN_TURN_FACTOR, MIN_TURN_FACTOR);
+                var turn_factor = clamp(abs(angle_diff) / ANGLE_TURN_DIVISOR, MIN_TURN_FACTOR, MAX_TURN_FACTOR);
                 entity.direction += angle_diff * turn_factor;
             }
         

@@ -69,7 +69,7 @@ function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) construct
     
         if (--missile_timer <= 0) {
         show_debug_message("entrou no missil ")
-         var missile = new src_bullet_missile_create(); var inst =instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_missil, missile); missile.state_machine = new state_projectile_state(other); 
+         var missile = new src_bullet_missile_create(); var inst =instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_missil, missile); missile.state_machine = new state_projectile_follow(other); 
             missile_timer = missile.cooldown;
         }
     });

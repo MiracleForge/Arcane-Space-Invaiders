@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Pawns",
-    "path":"folders/Objects/Enemys/Pawns.yy",
+    "path":"folders/Rooms/Enemys/Pawns.yy",
   },
   "parentObjectId":{
     "name":"obj_enemy_father",
