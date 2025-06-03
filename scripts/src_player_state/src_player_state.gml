@@ -21,7 +21,6 @@ function state_player_movement(_entity) constructor {
             var mov_x = lengthdir_x(spd, dir);
             var mov_y = lengthdir_y(spd, dir);
     
-            // Salva referência ao owner antes do with
             var inst = entity.owner;
     
             with (inst) {

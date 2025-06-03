@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"src_player_state",
+  "%Name":"src_projectiles_states",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"src_player_state",
+  "name":"src_projectiles_states",
   "parent":{
     "name":"StatesMachines",
     "path":"folders/Scripts/StatesMachines.yy",

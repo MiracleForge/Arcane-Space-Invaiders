@@ -1,20 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy_pawn",
+  "%Name":"obj_projectile_missil",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_enemy_pawn",
+  "name":"obj_projectile_missil",
   "overriddenProperties":[],
   "parent":{
-    "name":"Pawns",
-    "path":"folders/Objects/Enemys/Pawns.yy",
+    "name":"Projetiles",
+    "path":"folders/Objects/Projetiles.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy_father",
-    "path":"objects/obj_enemy_father/obj_enemy_father.yy",
+    "name":"obj_projectile_father",
+    "path":"objects/obj_projectile_father/obj_projectile_father.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy_pawn",
-    "path":"sprites/spr_enemy_pawn/spr_enemy_pawn.yy",
+    "name":"spr_missile_basic",
+    "path":"sprites/spr_missile_basic/spr_missile_basic.yy",
   },
   "spriteMaskId":null,
   "visible":true,

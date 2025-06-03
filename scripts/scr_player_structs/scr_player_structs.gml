@@ -37,7 +37,7 @@ function uss_cerulean_create(_owner) constructor {
     ///@description Fire a bullet from the emissor.
     ///@param {struct} [constructor_] Bullet Data. Default: `new bullet_create()`.
     ///@return {Id.Instance} Referece of instance.
-    fireBullet = method(self, function(constructor_ = new bullet_create()) {
+    fireBullet = method(self, function(constructor_ = new scr_bullet_create()) {
         var _h = owner.sprite_height / 2;
         instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_father, constructor_);
     });
@@ -58,7 +58,7 @@ function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) construct
     ///@description Fire a bullet from the emissor.
     ///@param {struct} [constructor_] Bullet Data. Default: `new bullet_create()`.
     ///@return {Id.Instance} Referece of instance.
-    fireBullet = method(self, function(constructor_ = new bullet_heat_create()) {
+    fireBullet = method(self, function(constructor_ = new scr_bullet_create ()) {
         var _h = owner.sprite_height * 0.5;
         var _w = owner.sprite_width * 0.5;
     
@@ -67,14 +67,9 @@ function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) construct
         instance_create_layer(owner.x + _w, owner.y - _h, "bullets", obj_projectile_father, constructor_);
         instance_create_layer(owner.x - _w, owner.y - _h, "bullets", obj_projectile_father, constructor_);
     
-          if (--missile_timer <= 0) {
-            var missile = new bullet_missile_create();
-            
-            // Procurar o inimigo mais próximo
-            var nearest_enemy = instance_nearest(owner.x, owner.y, obj_enemy_pawn);
-            missile.target = nearest_enemy;
-        
-            instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_father, missile);
+        if (--missile_timer <= 0) {
+        show_debug_message("entrou no missil ")
+         var missile = new src_bullet_missile_create(); var inst =instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_missil, missile); missile.state_machine = new state_projectile_state(other); 
             missile_timer = missile.cooldown;
         }
     });
