@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"const_mecanics",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"const_mecanics",
+  "parent":{
+    "name":"Mecanics",
+    "path":"folders/Scripts/Constants/Mecanics.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
