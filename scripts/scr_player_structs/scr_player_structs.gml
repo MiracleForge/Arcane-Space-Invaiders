@@ -1,20 +1,40 @@
 ///@description Constructor for Player Basic Ship
 ///@param {Id.Instance} _owner Instance Id from the owner object
 function uss_cerulean_create(_owner) constructor {
-    shield              = 150;        ///@type real
-    shieldCapacity      = 150;        ///@type real
+    shield              = 3;        ///@type real
+    shieldCapacity      = 3;        ///@type real
     metalicBelt         = 1;          ///@type real
     metalicBeltCapacity = 1;          ///@type real
     overheatStatus      = 0;          ///@type real
-    overheatCapacity    = 150;        ///@type real
-    mov_speed           = 0.8;        ///@type real
+    overheatCapacity    = 15;        ///@type real
+    mov_speed           = 1;        ///@type real
     mass                = 0.5;        ///@type real
     acceleration        = 2.5;        ///@type real
     shootOn             = false;      ///@type bool
-    shotCountdown       = 20;         ///@type real
+    shotCountdown       = 18;         ///@type real
+
 
     owner = _owner; // Keep the instance that own this struct.
     state_movement = new state_player_movement(self); // Start machineState
+    
+    ///@description Methods that allow player to shoot based in some params
+    shootProjectile = method(self, function () {
+         var isOverheated = (overheatStatus >= overheatCapacity);
+
+        if (!isOverheated && owner.alarm[0] == -1 && INPUT_SHOOT) {
+            fireBullet();                 // dispara
+            increaseHeat(1);              // acumula calor, por exemplo 
+          
+            owner.alarm[0] = shotCountdown;
+   
+            show_debug_message( shotCountdown)
+                // inicia cooldown entre tiros
+        }
+        else if (isOverheated) {
+            show_debug_message("OVERHEAT!");
+            // aqui você pode tocar um som, piscar HUD etc.
+        }
+    })
 
     ///@description Restore an amount quantity of shield energy.
     ///@param {real} amount Quantity of shield restored.
@@ -40,19 +60,19 @@ function uss_cerulean_create(_owner) constructor {
     fireBullet = method(self, function(constructor_ = new scr_bullet_create()) {
         var _h = owner.sprite_height / 2;
         instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_father, constructor_);
-    });
+        });
 };
 
 
 ///@description Constructor for Player USS_EmberStrike.
 ///@param {Id.Instance} _owner Instance Id from the owner object.
 function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) constructor {
-    shield                     = 300;        ///@type real
-    static shieldCapacity      = 300;        ///@type real
-    static overheatCapacity    = 200;        ///@type real
-    mov_speed                  = 0.5;        ///@type real
+    shield                     = 5;        ///@type real
+    static shieldCapacity      = 5 ;        ///@type real
+    static overheatCapacity    = 3;        ///@type real
+    mov_speed                  = 1.3;        ///@type real
     mass                       = 0.7;        ///@type real
-    acceleration               = 1.2;        ///@type real
+    acceleration               = 1.3;        ///@type real
     shotCountdown              = 40;         ///@type real
 
     ///@description Fire a bullet from the emissor.

@@ -6,13 +6,16 @@ function state_player_movement(_entity) constructor {
     };
     
     run = function() {
+        
+        entity.shootProjectile(); // call the shooting Function method.
         var dx = 0;
         var dy = 0;
     
         if (INPUT_RIGHT) dx += 1;
         if (INPUT_LEFT)  dx -= 1;
         if (INPUT_UP)    dy -= 1;
-        if (INPUT_DOWN)  dy += 1;
+        if (INPUT_DOWN)  dy += 1; 
+        //if (INPUT_SHOOT && !entity.shootOn) data.fireBullet();
     
         if (dx != 0 || dy != 0) {
             var dir = point_direction(0, 0, dx, dy);

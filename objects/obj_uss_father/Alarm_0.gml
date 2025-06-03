@@ -1,3 +1,2 @@
-data.shootOn = true;
-data.fireBullet();
-alarm[0] = data.shotCountdown;
+data.increaseHeat(1);
+alarm[0] = -1;

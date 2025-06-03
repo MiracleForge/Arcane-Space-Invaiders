@@ -1,1 +1,2 @@
-
+ship = undefined;
+created = false;
