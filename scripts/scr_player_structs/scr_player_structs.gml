@@ -3,36 +3,35 @@
 function uss_cerulean_create(_owner) constructor {
     shield              = 3;        ///@type real
     shieldCapacity      = 3;        ///@type real
-    metalicBelt         = 1;          ///@type real
-    metalicBeltCapacity = 1;          ///@type real
-    overheatStatus      = 0;          ///@type real
-    overheatCapacity    = 15;        ///@type real
-    mov_speed           = 1;        ///@type real
-    mass                = 0.5;        ///@type real
-    acceleration        = 2.5;        ///@type real
-    shootOn             = false;      ///@type bool
-    shotCountdown       = 18;         ///@type real
+    metalicBelt         = 1;        ///@type real
+    metalicBeltCapacity = 1;        ///@type real
+    overheatStatus      = 0;        ///@type real
+    overheatCapacity    = 15;       ///@type real
+    static max_speed    = 2;        ///@type real
+    current_speed_x     = 0;        ///@type float
+    current_speed_y     = 0;        ///@type float
+    static glideFactor  = 0.90;     ///@type float take more time to ship stop
+    static acceleration = 2;        ///@type real
+    shootOn             = false;    ///@type bool
+    shotCountdown       = 18;       ///@type real
 
-
-    owner = _owner; // Keep the instance that own this struct.
-    state_movement = new state_player_movement(self); // Start machineState
+    owner = _owner; ///@type Id.Instance Keep the instance that own this struct.
+    state_movement = new state_player_movement(self); ///@type Struct Start machineState
     
     ///@description Methods that allow player to shoot based in some params
     shootProjectile = method(self, function () {
          var isOverheated = (overheatStatus >= overheatCapacity);
 
         if (!isOverheated && owner.alarm[0] == -1 && INPUT_SHOOT) {
-            fireBullet();                 // dispara
-            increaseHeat(1);              // acumula calor, por exemplo 
+            fireBullet();
+            increaseHeat(1);
           
             owner.alarm[0] = shotCountdown;
    
             show_debug_message( shotCountdown)
-                // inicia cooldown entre tiros
         }
         else if (isOverheated) {
             show_debug_message("OVERHEAT!");
-            // aqui você pode tocar um som, piscar HUD etc.
         }
     })
 
@@ -67,12 +66,14 @@ function uss_cerulean_create(_owner) constructor {
 ///@description Constructor for Player USS_EmberStrike.
 ///@param {Id.Instance} _owner Instance Id from the owner object.
 function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) constructor {
-    shield                     = 5;        ///@type real
-    static shieldCapacity      = 5 ;        ///@type real
-    static overheatCapacity    = 3;        ///@type real
-    mov_speed                  = 1.3;        ///@type real
-    mass                       = 0.7;        ///@type real
-    acceleration               = 1.3;        ///@type real
+    shield                     = 5;          ///@type real
+    static shieldCapacity      = 5 ;         ///@type real
+    static overheatCapacity    = 3;          ///@type real
+    static max_speed           = 1;        ///@type real
+    current_speed_x            = 0;
+    current_speed_y            = 0;
+    static glideFactor         = 0.95;     ///@type float take more time to ship stop
+    static acceleration        = 2;         ///@type real
     shotCountdown              = 40;         ///@type real
 
     ///@description Fire a bullet from the emissor.
