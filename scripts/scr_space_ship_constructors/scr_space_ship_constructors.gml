@@ -125,4 +125,44 @@ function ShipEmberStrikeCreate(_owner) : ShipCeruleanCreate(_owner) constructor 
             _missile_timer = _missile.cooldown;
         }
     });
+    
+    
+    ///@description Draw methods for rocket flame logic.
+      draw_rocket_flame = method(self, function() {
+        var _spr_index = owner.sprite_index;
+        var _spr_width = owner.sprite_width;
+        var _spr_height = owner.sprite_height;
+        var _y_offset = sprite_get_yoffset(_spr_index);
+    
+        var _x = owner.x + 1;
+        var _y = owner.y;
+        var _angle = owner.image_angle;
+    
+        var _rocket_y = _y - ((_y_offset - _spr_height) div (_y_offset / 2));
+        var _rocket_x_left  = _x - _spr_width / 3;
+        var _rocket_x_right = _x + _spr_width / 4;
+    
+        var _time = current_time * 0.005;
+        var _pulse = sin(_time) * 0.1 + 1;
+        flare_scale = lerp(flare_scale, _pulse + random_range(0.0, 0.5), 0.5);
+    
+        var _alpha = 0.8 + 0.6 * sin(_time * 2);
+        var _scale_main = flare_scale * 0.9;
+        var _scale_core = flare_scale - 0.2;
+    
+        var _col_flare = make_color_rgb(80, 160, 255);
+    
+        gpu_set_blendmode(bm_add);
+    
+        // Flare with glow
+        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_left,  _rocket_y + random_range(-0.5, 0.5), _scale_main, _scale_main, _angle, _col_flare, _alpha);
+        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_right, _rocket_y + random_range(-0.5, 0.5), _scale_main, _scale_main, _angle, _col_flare, _alpha);
+    
+        // Core white center
+        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_left,  _rocket_y, _scale_core, _scale_core, _angle, c_white, 1);
+        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_right, _rocket_y, _scale_core, _scale_core, _angle, c_white, 1);
+    
+        gpu_set_blendmode(bm_normal);
+    });
+    
 };

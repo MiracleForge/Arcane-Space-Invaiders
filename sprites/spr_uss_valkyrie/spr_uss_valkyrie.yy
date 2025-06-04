@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"SpaceShips",
-    "path":"folders/Sprites/SpaceShips.yy",
+    "name":"space_ships",
+    "path":"folders/Sprites/space_ships.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

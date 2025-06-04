@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_controller_camera",
+    "path":"sprites/spr_controller_camera/spr_controller_camera.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

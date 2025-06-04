@@ -3,6 +3,7 @@ if (keyboard_check_pressed(vk_f1)) {
 }
 
 if (show_debug_info) {
+    show_debug_overlay(true)
     debug_text = [];
     array_push(debug_text, "FPS: " + string(fps));
     array_push(debug_text, "Mouse X/Y: " + string(mouse_x) + " / " + string(mouse_y));
@@ -26,5 +27,4 @@ if (show_debug_info) {
     if (keyboard_check_pressed(ord("2"))) {
         scr_spawn_player_ship("ember_strike");
     }
-
 }

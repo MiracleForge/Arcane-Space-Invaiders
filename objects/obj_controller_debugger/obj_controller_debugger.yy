@@ -31,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_controller_debugger",
+    "path":"sprites/spr_controller_debugger/spr_controller_debugger.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

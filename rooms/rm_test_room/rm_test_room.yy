@@ -1,14 +1,14 @@
 {
   "$GMRoom":"v1",
-  "%Name":"Room1",
-  "creationCodeFile":"rooms/Room1/RoomCreationCode.gml",
+  "%Name":"rm_test_room",
+  "creationCodeFile":"rooms/rm_test_room/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_64B24458","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_72FD14E4","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_2E5576B1","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_64B24458","path":"rooms/rm_test_room/rm_test_room.yy",},
+    {"name":"inst_72FD14E4","path":"rooms/rm_test_room/rm_test_room.yy",},
+    {"name":"inst_2E5576B1","path":"rooms/rm_test_room/rm_test_room.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -16,13 +16,13 @@
         {"$GMRInstance":"v2","%Name":"inst_2E5576B1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2E5576B1","objectId":{"name":"obj_enemy_pawn","path":"objects/obj_enemy_pawn/obj_enemy_pawn.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":256.0,"y":128.0,},
       ],"layers":[],"name":"enemy","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"instances_test","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v2","%Name":"inst_64B24458","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_64B24458","objectId":{"name":"obj_controller_debugger","path":"objects/obj_controller_debugger/obj_controller_debugger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":448.0,"y":-16.0,},
+        {"$GMRInstance":"v2","%Name":"inst_64B24458","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_64B24458","objectId":{"name":"obj_controller_debugger","path":"objects/obj_controller_debugger/obj_controller_debugger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":464.0,"y":-16.0,},
         {"$GMRInstance":"v2","%Name":"inst_72FD14E4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_72FD14E4","objectId":{"name":"obj_controller_camera","path":"objects/obj_controller_camera/obj_controller_camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":432.0,"y":-16.0,},
       ],"layers":[],"name":"instances_test","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"bullets","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"bullets","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4283177216,"depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "name":"Room1",
+  "name":"rm_test_room",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",
