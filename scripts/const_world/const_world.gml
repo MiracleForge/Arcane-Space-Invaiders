@@ -3,3 +3,5 @@
 #macro BORDER_BOUND_TOP         room_height * 0.05
 #macro BORDER_BOUND_HORIZONTAL  room_width * 0.02
 #macro BORDER_BOUND_BOTTOM      room_height * 0.05 
+
+#macro PLAYER_LAYER             "instances_test"

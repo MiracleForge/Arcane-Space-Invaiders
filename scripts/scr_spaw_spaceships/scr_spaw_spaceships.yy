@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_spaw_spaceships",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_spaw_spaceships",
+  "parent":{
+    "name":"debugger",
+    "path":"folders/Scripts/debugger.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
