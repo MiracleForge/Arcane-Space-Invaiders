@@ -12,7 +12,9 @@ function uss_cerulean_create(_owner) constructor {
     static acceleration = 2;        ///@type real
     shootOn             = false;    ///@type bool
     shotCountdown       = 18;       ///@type real
-    flareFrame         = 0;        ///@type real
+    flareFrame          = 0;        ///@type real
+    flareScale          = 1; 
+    tilt                = 2;
 
     owner = _owner; ///@type Id.Instance Keep the instance that own this struct.
     state_movement = new state_player_movement(undefined);
@@ -60,24 +62,44 @@ function uss_cerulean_create(_owner) constructor {
     ///@return {Id.Instance} Referece of instance.
     fireBullet = method(self, function(constructor_ = new scr_bullet_create()) {
         var _h = owner.sprite_height / 2;
-        instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_father, constructor_); 
+        var inst = instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_father, constructor_); 
     });
     
     
     //// Draw Methods
     drawRocketFlame = method(self, function() {
-    var y_offset = sprite_get_yoffset(owner.sprite_index);
-    var rocketY_offset = owner.y - ((y_offset - owner.sprite_height) div (y_offset / 2))
-    var rokectX_offset = owner.x - 0.5;
-
+        var y_offset = sprite_get_yoffset(owner.sprite_index);
+        var rocketY_offset = owner.y - ((y_offset - owner.sprite_height) div (y_offset / 2));
+        var rocketX_offset = owner.x - 0.5;
+    
+        var time = current_time * 0.005;
+        var pulse = sin(time) * 0.1 + 1;
+        flareScale = lerp(flareScale, pulse + random_range(0.0, 0.5), 0.5);
+    
+        var alpha = 0.6 + 0.2 * sin(time * 2);
+    
+        gpu_set_blendmode(bm_add);
+    
         draw_sprite_ext(
             spr_rockets_red, flareFrame,
-            rokectX_offset, rocketY_offset,
-            owner.image_xscale, owner.image_yscale,
+            rocketX_offset, rocketY_offset + random_range(-0.5, 0.5),
+            flareScale * 1.2, flareScale * 1.2,
             owner.image_angle,
-            c_white, 1
-    );
-    })
+            make_color_rgb(80, 160, 255),
+            alpha
+        );
+    
+        draw_sprite_ext(
+            spr_rockets_red, flareFrame,
+            rocketX_offset, rocketY_offset,
+            flareScale, flareScale,
+            owner.image_angle,
+            c_white,
+            1
+        );
+        gpu_set_blendmode(bm_normal);
+});
+
 };
 
 /////////////////////// EMBER STRIKE /////////////////////////////////////////////////////

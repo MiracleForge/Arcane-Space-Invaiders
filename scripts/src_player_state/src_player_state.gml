@@ -25,11 +25,17 @@ function state_player_movement(_entity) constructor {
             var dir = point_direction(0, 0, dx, dy);
             inst.hspeed += lengthdir_x(acc, dir);
             inst.vspeed += lengthdir_y(acc, dir);
+         
+            var tilt_target = clamp(dx * 8, -10, 10); // Quanto maior o dx, mais inclina
+            entity.tilt = lerp(entity.tilt, tilt_target, 0.2); // Suaviza o valor anterior
+            inst.image_angle = entity.tilt;
+
             entity.flareFrame = 2 + (floor(current_time / 100) mod 2);
         } else {
             inst.hspeed *= glide;
             inst.vspeed *= glide;
             entity.flareFrame = (floor(current_time / 100) mod 2);
+            inst.image_angle = 0;
         }
         
         var vel = point_distance(0, 0, inst.hspeed, inst.vspeed);
@@ -41,12 +47,10 @@ function state_player_movement(_entity) constructor {
 
         var half_w = inst.sprite_width div 2;
         var half_h = inst.sprite_height div 2;
-        var rw = room_width;
-        var rh = room_height;
-        var border_offset_y = rh * 0.05;
-    
-        inst.x = clamp(inst.x, half_w, rw - half_w);
-        inst.y = clamp(inst.y, half_h, rh - (half_h + border_offset_y));
+
+        inst.x = clamp(inst.x, half_w + BORDER_BOUND_HORIZONTAL, room_width - half_w - BORDER_BOUND_HORIZONTAL);
+        inst.y = clamp(inst.y, half_h + BORDER_BOUND_TOP, room_height - half_h - BORDER_BOUND_BOTTOM);
+        
     };
     
     stop = function() {
