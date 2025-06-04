@@ -1,23 +1,36 @@
 ///@description Constructor for Player Basic Ship
 ///@param {Id.Instance} _owner Instance Id from the owner object
 function uss_cerulean_create(_owner) constructor {
-    shield              = 3;        ///@type real
-    shieldCapacity      = 3;        ///@type real
-    metalicBelt         = 1;        ///@type real
-    metalicBeltCapacity = 1;        ///@type real
-    overheatStatus      = 0;        ///@type real
-    overheatCapacity    = 15;       ///@type real
-    static max_speed    = 2;        ///@type real
-    static glideFactor  = 0.90;     ///@type float take more time to ship stop
-    static acceleration = 2;        ///@type real
-    shootOn             = false;    ///@type bool
-    shotCountdown       = 18;       ///@type real
-    flareFrame          = 0;        ///@type real
-    flareScale          = 1; 
-    tilt                = 2;
+    //===[ Owner ]===
+    owner = _owner; ///@type Id.Instance
+    
+    //===[ Core Stats ]===
+    shield              = 3;
+    shieldCapacity      = 3;
+    metalicBelt         = 1;
+    metalicBeltCapacity = 1;
+    
+    //===[ Heat System ]===
+    overheatStatus      = 0;
+    overheatCapacity    = 15;
+    
+    //===[ Movement Params ]===
+    static max_speed    = 2;
+    static acceleration = 2;
+    static glideFactor  = 0.90;
+    
+    //===[ Weapon & Firing ]===
+    shootOn             = false;
+    shotCountdown       = 18;
+    
+    //===[ Flame Visuals ]===
+    flareFrame          = 0;
+    flareScale          = 1;
+    
+    //===[ Tilting ]===
+    tilt = 2;
 
-    owner = _owner; ///@type Id.Instance Keep the instance that own this struct.
-    state_movement = new state_player_movement(undefined);
+    state_movement = new state_player_movement();
 
     state_movement.entity = self;
 
@@ -67,6 +80,7 @@ function uss_cerulean_create(_owner) constructor {
     
     
     //// Draw Methods
+    ///@description Draw methods for drow engine flame and logic.
     drawRocketFlame = method(self, function() {
         var y_offset = sprite_get_yoffset(owner.sprite_index);
         var rocketY_offset = owner.y - ((y_offset - owner.sprite_height) div (y_offset / 2));
