@@ -1,4 +1,2 @@
 
 state_machine = {}
-
-

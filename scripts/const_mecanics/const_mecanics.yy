@@ -6,7 +6,7 @@
   "name":"const_mecanics",
   "parent":{
     "name":"Mecanics",
-    "path":"folders/Scripts/Constants/Mecanics.yy",
+    "path":"folders/Scripts/constants/Mecanics.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

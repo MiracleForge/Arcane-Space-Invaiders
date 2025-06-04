@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_projectile_struct",
   "parent":{
-    "name":"bullets",
-    "path":"folders/Scripts/Structs/bullets.yy",
+    "name":"projectiles_constructors",
+    "path":"folders/Scripts/constructors/projectiles_constructors.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

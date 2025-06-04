@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"state_machines_constructors",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"state_machines_constructors",
+  "parent":{
+    "name":"constructors",
+    "path":"folders/Scripts/constructors.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

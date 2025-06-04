@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"src_projectiles_states",
   "parent":{
-    "name":"StatesMachines",
-    "path":"folders/Scripts/StatesMachines.yy",
+    "name":"state_machines",
+    "path":"folders/Scripts/state_machines.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

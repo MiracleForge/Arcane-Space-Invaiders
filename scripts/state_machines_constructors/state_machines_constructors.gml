@@ -1,4 +1,4 @@
-function state() constructor {
+function State() constructor {
     start = method(self, function() {});
     run   = method(self, function() {});
     stop  = method(self, function() {});

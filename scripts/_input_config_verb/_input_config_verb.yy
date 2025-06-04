@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"_input_config_verb",
   "parent":{
-    "name":"Config",
-    "path":"folders/Scripts/Config.yy",
+    "name":"config",
+    "path":"folders/Scripts/config.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

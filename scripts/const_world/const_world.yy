@@ -6,7 +6,7 @@
   "name":"const_world",
   "parent":{
     "name":"World",
-    "path":"folders/Scripts/Constants/World.yy",
+    "path":"folders/Scripts/constants/World.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

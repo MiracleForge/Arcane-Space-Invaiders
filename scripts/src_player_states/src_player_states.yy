@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_state_machine_struct",
+  "%Name":"src_player_states",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_state_machine_struct",
+  "name":"src_player_states",
   "parent":{
-    "name":"Structs",
-    "path":"folders/Scripts/Structs.yy",
+    "name":"state_machines",
+    "path":"folders/Scripts/state_machines.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

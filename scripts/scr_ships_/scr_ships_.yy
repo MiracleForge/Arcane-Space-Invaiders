@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_ships_",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_ships_",
+  "parent":{
+    "name":"ships_constructors",
+    "path":"folders/scripts/constructors/ships_constructors.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

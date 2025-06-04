@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_space_ship_constructors",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_space_ship_constructors",
+  "parent":{
+    "name":"player_constructors",
+    "path":"folders/Scripts/constructors/player_constructors.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
