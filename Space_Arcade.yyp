@@ -74,6 +74,7 @@
     {"id":{"name":"spr_bullet_heat","path":"sprites/spr_bullet_heat/spr_bullet_heat.yy",},},
     {"id":{"name":"spr_enemy_pawn","path":"sprites/spr_enemy_pawn/spr_enemy_pawn.yy",},},
     {"id":{"name":"spr_missile_basic","path":"sprites/spr_missile_basic/spr_missile_basic.yy",},},
+    {"id":{"name":"spr_rockets_red_1","path":"sprites/spr_rockets_red_1/spr_rockets_red_1.yy",},},
     {"id":{"name":"spr_rockets_red","path":"sprites/spr_rockets_red/spr_rockets_red.yy",},},
     {"id":{"name":"spr_unpack_projectiles","path":"sprites/spr_unpack_projectiles/spr_unpack_projectiles.yy",},},
     {"id":{"name":"spr_uss_cerulean","path":"sprites/spr_uss_cerulean/spr_uss_cerulean.yy",},},

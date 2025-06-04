@@ -8,17 +8,15 @@ function uss_cerulean_create(_owner) constructor {
     overheatStatus      = 0;        ///@type real
     overheatCapacity    = 15;       ///@type real
     static max_speed    = 2;        ///@type real
-    current_speed_x     = 0;        ///@type float
-    current_speed_y     = 0;        ///@type float
     static glideFactor  = 0.90;     ///@type float take more time to ship stop
     static acceleration = 2;        ///@type real
     shootOn             = false;    ///@type bool
     shotCountdown       = 18;       ///@type real
+    flareFrame         = 0;        ///@type real
 
     owner = _owner; ///@type Id.Instance Keep the instance that own this struct.
     state_movement = new state_player_movement(undefined);
 
-    // 2. Agora que tudo está inicializado, atribui 'self' ao estado
     state_movement.entity = self;
 
     
@@ -64,8 +62,26 @@ function uss_cerulean_create(_owner) constructor {
         var _h = owner.sprite_height / 2;
         instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_father, constructor_); 
     });
+    
+    
+    //// Draw Methods
+    drawRocketFlame = method(self, function() {
+    var y_offset = sprite_get_yoffset(owner.sprite_index);
+    var rocketY_offset = owner.y - ((y_offset - owner.sprite_height) div (y_offset / 2))
+    var rokectX_offset = owner.x - 0.5;
+
+        draw_sprite_ext(
+            spr_rockets_red, flareFrame,
+            rokectX_offset, rocketY_offset,
+            owner.image_xscale, owner.image_yscale,
+            owner.image_angle,
+            c_white, 1
+    );
+    })
 };
 
+/////////////////////// EMBER STRIKE /////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 
 ///@description Constructor for Player USS_EmberStrike.
 ///@param {Id.Instance} _owner Instance Id from the owner object.
@@ -74,8 +90,6 @@ function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) construct
     static shieldCapacity      = 5 ;         ///@type real
     static overheatCapacity    = 3;          ///@type real
     static max_speed           = 1;          ///@type real
-    current_speed_x            = 0;          ///@type float
-    current_speed_y            = 0;          ///@type float
     static glideFactor         = 0.95;       ///@type float take more time to ship stop
     static acceleration        = 2;          ///@type real
     shotCountdown              = 40;         ///@type real
