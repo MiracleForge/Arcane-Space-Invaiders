@@ -16,11 +16,15 @@ function uss_cerulean_create(_owner) constructor {
     shotCountdown       = 18;       ///@type real
 
     owner = _owner; ///@type Id.Instance Keep the instance that own this struct.
-    state_movement = new state_player_movement(self); ///@type Struct Start machineState
+    state_movement = new state_player_movement(undefined);
+
+    // 2. Agora que tudo está inicializado, atribui 'self' ao estado
+    state_movement.entity = self;
+
     
     ///@description Methods that allow player to shoot based in some params
     shootProjectile = method(self, function () {
-         var isOverheated = (overheatStatus >= overheatCapacity);
+        var isOverheated = (overheatStatus >= overheatCapacity);
 
         if (!isOverheated && owner.alarm[0] == -1 && INPUT_SHOOT) {
             fireBullet();
@@ -58,8 +62,8 @@ function uss_cerulean_create(_owner) constructor {
     ///@return {Id.Instance} Referece of instance.
     fireBullet = method(self, function(constructor_ = new scr_bullet_create()) {
         var _h = owner.sprite_height / 2;
-        instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_father, constructor_);
-        });
+        instance_create_layer(owner.x, owner.y - _h, "bullets", obj_projectile_father, constructor_); 
+    });
 };
 
 
@@ -69,32 +73,29 @@ function uss_ember_strike_create(_owner) : uss_cerulean_create(_owner) construct
     shield                     = 5;          ///@type real
     static shieldCapacity      = 5 ;         ///@type real
     static overheatCapacity    = 3;          ///@type real
-    static max_speed           = 1;        ///@type real
-    current_speed_x            = 0;
-    current_speed_y            = 0;
-    static glideFactor         = 0.95;     ///@type float take more time to ship stop
-    static acceleration        = 2;         ///@type real
+    static max_speed           = 1;          ///@type real
+    current_speed_x            = 0;          ///@type float
+    current_speed_y            = 0;          ///@type float
+    static glideFactor         = 0.95;       ///@type float take more time to ship stop
+    static acceleration        = 2;          ///@type real
     shotCountdown              = 40;         ///@type real
 
     ///@description Fire a bullet from the emissor.
     ///@param {struct} [constructor_] Bullet Data. Default: `new bullet_create()`.
     ///@return {Id.Instance} Referece of instance.
     fireBullet = method(self, function(constructor_ = new scr_bullet_create ()) {
-     var half_h = owner.sprite_height * 0.5; 
-     var half_w = owner.sprite_width * 0.5;
-
+         var half_h = owner.sprite_height * 0.5; 
+         var half_w = owner.sprite_width * 0.5;
     
-     static missile_timer = 0;
-
-     var bullet_data = constructor_;
-     instance_create_layer(owner.x + half_w, owner.y - half_h, "bullets", obj_projectile_father, bullet_data);
-     instance_create_layer(owner.x - half_w, owner.y - half_h, "bullets", obj_projectile_father, bullet_data);
-
+         static missile_timer = 0;
+    
+         var bullet_data = constructor_;
+         instance_create_layer(owner.x + half_w, owner.y - half_h, "bullets", obj_projectile_father, bullet_data);
+         instance_create_layer(owner.x - half_w, owner.y - half_h, "bullets", obj_projectile_father, bullet_data);
     
         if (--missile_timer <= 0) {
-        show_debug_message("entrou no missil ")
-             var missile = new src_bullet_missile_create(); var inst =instance_create_layer(owner.x, owner.y -half_h, "bullets", obj_projectile_missil, missile); 
-             missile_timer = missile.cooldown;
+            var missile = new src_bullet_missile_create(); var inst =instance_create_layer(owner.x, owner.y -half_h, "bullets", obj_projectile_missil, missile); 
+            missile_timer = missile.cooldown;
         }
     });
 };
