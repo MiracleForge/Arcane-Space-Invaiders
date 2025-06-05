@@ -154,8 +154,8 @@ function ShipEmberStrikeCreate(_owner) : ShipCeruleanCreate(_owner) constructor 
         shader_set_uniform_f(shader_get_uniform(sh_test, "u_flameColor"), 0.7, 0.2, 1.0); // roxo, por exemplo
 
       
-        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_left, _rocket_y , _scale_x,1, -owner.image_angle, c_white, 1);
-        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame,  _rocket_x_right, _rocket_y, _scale_x,1, -owner.image_angle, c_white,1);
+        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_left, _rocket_y , _scale_x,1, _angle, c_white, 1);
+        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame,  _rocket_x_right, _rocket_y, _scale_x,1, _angle, c_white,1);
         
         shader_reset()
      

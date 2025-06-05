@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_projectile_struct",
+  "%Name":"scr_projectile_constructors",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_projectile_struct",
+  "name":"scr_projectile_constructors",
   "parent":{
     "name":"projectiles_constructors",
     "path":"folders/Scripts/constructors/projectiles_constructors.yy",
