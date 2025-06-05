@@ -1,6 +1,10 @@
 1 - {
     Moviment - Give some Juice to ship moviment
         -- Aceleration - how do I will make it.
-        -- Break
-        -- Rocket Aceleration
+        -- Break - ok
+        -- Rocket Aceleration - ok
+};
+
+Special Effects - {
+    Flame Rockets
 }

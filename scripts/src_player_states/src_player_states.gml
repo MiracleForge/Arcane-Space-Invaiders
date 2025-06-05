@@ -31,9 +31,7 @@ function StatePlayerMovement(_entity = undefined) constructor {
             var _tilt_target = clamp(_tilt_dir * 8, -10, 10);
             entity.tilt = lerp(entity.tilt, _tilt_target, 0.2);
             _inst.image_angle = entity.tilt;
-            show_debug_message(_inst.image_angle);
-
-            entity.flare_frame = 2 + (floor(current_time / 100) mod 2);
+            entity.flare_frame = 2 + (floor(current_time / 100) mod 2); // The flames sprites need to be forced 4 frimes whide.
         } else {
             _inst.hspeed *= _glide_factor;
             _inst.vspeed *= _glide_factor;
