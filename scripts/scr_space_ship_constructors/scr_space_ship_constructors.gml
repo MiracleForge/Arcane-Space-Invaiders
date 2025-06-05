@@ -75,23 +75,25 @@ function ShipCeruleanCreate(_owner) constructor {
 
     ///@description Draw methods for rocket flame logic.
     draw_rocket_flame = method(self, function() {
+        var _time = current_time * 0.005;
+        
         var _y_offset = sprite_get_yoffset(owner.sprite_index);
         var _rocket_y_offset = owner.y - ((_y_offset - owner.sprite_height) div (_y_offset / 2));
         var _rocket_x_offset = owner.x - 0.5;
+         var _alpha = 0.8 + 0.6 * sin(_time * 2);
+        shader_set(sh_test); 
+        shader_set_uniform_f(shader_get_uniform(sh_test, "u_time"), _time);
+        shader_set_uniform_f(shader_get_uniform(sh_test, "u_flameColor"), 0.7, 0.2, 1.0); // roxo, por exemplo
+        
+        // 🔷 Sprite 1: com ruído, pulsação e alpha, tudo no shader
+        draw_sprite_ext(spr_rockets_red, flare_frame, _rocket_x_offset, _rocket_y_offset, 1, 1, owner.image_angle, c_white, 1);
+        
+        // ⚪ Sprite 2: fixo, cor branca, escala 1
+        //draw_sprite_ext(spr_rockets_red, flare_frame, _rocket_x_offset, _rocket_y_offset, 1.0, 1.0, owner.image_angle, c_white, 1);
+        
+        shader_reset();
 
-        var _time = current_time * 0.005;
-        var _pulse = sin(_time) * 0.1 + 1;
-        flare_scale = lerp(flare_scale, _pulse + random_range(0.0, 0.5), 0.5);
-
-        var _alpha = 0.6 + 0.2 * sin(_time * 2);
-
-        gpu_set_blendmode(bm_add);
-
-        draw_sprite_ext(spr_rockets_red, flare_frame, _rocket_x_offset, _rocket_y_offset + random_range(-0.5, 0.5), flare_scale * 1.2, flare_scale * 1.2, owner.image_angle, make_color_rgb(80, 160, 255), _alpha);
-
-        draw_sprite_ext(spr_rockets_red, flare_frame, _rocket_x_offset, _rocket_y_offset, flare_scale, flare_scale, owner.image_angle, c_white, 1);
-
-        gpu_set_blendmode(bm_normal);
+        
     });
 };
 
@@ -134,32 +136,30 @@ function ShipEmberStrikeCreate(_owner) : ShipCeruleanCreate(_owner) constructor 
         var _spr_height = owner.sprite_height;
         var _y_offset = sprite_get_yoffset(_spr_index);
     
-        var _x = owner.x + 1;
+        var _x = owner.x + 0.5;
         var _y = owner.y;
         var _angle = owner.image_angle;
     
         var _rocket_y = _y - ((_y_offset - _spr_height) div (_y_offset / 2));
         var _rocket_x_left  = _x - _spr_width / 3;
         var _rocket_x_right = _x + _spr_width / 4;
-    
+         var _scale_x = (owner.hspeed < 0) ? -1 : 1;
+        
         var _time = current_time * 0.005;
-        var _pulse = sin(_time) * 0.1 + 1;
-        flare_scale = lerp(flare_scale, _pulse + random_range(0.0, 0.5), 0.5);
-    
         var _alpha = 0.8 + 0.6 * sin(_time * 2);
-        var _scale_main = flare_scale * 0.9;
-        var _scale_core = flare_scale - 0.2;
-    
-        var _col_flare = make_color_rgb(100, 160, 255);
-    
-        gpu_set_blendmode(bm_add);
-    
-        var _i = 0; 
-        repeat (2) {
-            draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, (_i == 0 ? _rocket_x_left : _rocket_x_right), _rocket_y + random_range(-0.5, 0.5), _scale_main, _scale_main, _angle, _col_flare, _alpha);
-            draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, (_i++ == 0 ? _rocket_x_left : _rocket_x_right), _rocket_y, _scale_core, _scale_core, _angle, c_white, 1);
-        }
-        gpu_set_blendmode(bm_normal);
+      
+   
+        shader_set(sh_test); 
+        shader_set_uniform_f(shader_get_uniform(sh_test, "u_time"), _time);
+        shader_set_uniform_f(shader_get_uniform(sh_test, "u_flameColor"), 0.7, 0.2, 1.0); // roxo, por exemplo
+
+      
+        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_left, _rocket_y , _scale_x,1, -owner.image_angle, c_white, 1);
+        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame,  _rocket_x_right, _rocket_y, _scale_x,1, -owner.image_angle, c_white,1);
+        
+        shader_reset()
+     
+        
     });
     
 };

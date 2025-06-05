@@ -1,4 +1,4 @@
-//
+// Passthrought the sprite vertex, 4 of 
 // Simple passthrough vertex shader
 //
 attribute vec3 in_Position;                  // (x,y,z)

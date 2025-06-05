@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"sh_rocket_flame",
+  "name":"sh_rocket_flame",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}
