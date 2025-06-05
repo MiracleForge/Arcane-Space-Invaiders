@@ -150,18 +150,15 @@ function ShipEmberStrikeCreate(_owner) : ShipCeruleanCreate(_owner) constructor 
         var _scale_main = flare_scale * 0.9;
         var _scale_core = flare_scale - 0.2;
     
-        var _col_flare = make_color_rgb(80, 160, 255);
+        var _col_flare = make_color_rgb(100, 160, 255);
     
         gpu_set_blendmode(bm_add);
     
-        // Flare with glow
-        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_left,  _rocket_y + random_range(-0.5, 0.5), _scale_main, _scale_main, _angle, _col_flare, _alpha);
-        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_right, _rocket_y + random_range(-0.5, 0.5), _scale_main, _scale_main, _angle, _col_flare, _alpha);
-    
-        // Core white center
-        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_left,  _rocket_y, _scale_core, _scale_core, _angle, c_white, 1);
-        draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, _rocket_x_right, _rocket_y, _scale_core, _scale_core, _angle, c_white, 1);
-    
+        var _i = 0; 
+        repeat (2) {
+            draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, (_i == 0 ? _rocket_x_left : _rocket_x_right), _rocket_y + random_range(-0.5, 0.5), _scale_main, _scale_main, _angle, _col_flare, _alpha);
+            draw_sprite_ext(spr_rockets_red_variant_1, flare_frame, (_i++ == 0 ? _rocket_x_left : _rocket_x_right), _rocket_y, _scale_core, _scale_core, _angle, c_white, 1);
+        }
         gpu_set_blendmode(bm_normal);
     });
     
