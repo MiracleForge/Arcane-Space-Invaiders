@@ -1,7 +1,7 @@
 {
   "$GMShader":"",
-  "%Name":"sh_test",
-  "name":"sh_test",
+  "%Name":"sh_engine_flare",
+  "name":"sh_engine_flare",
   "parent":{
     "name":"Shaders",
     "path":"folders/Shaders.yy",

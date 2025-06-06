@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_enemy_father",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_uss_father","path":"objects/obj_uss_father/obj_uss_father.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_enemy_father",
   "overriddenProperties":[],

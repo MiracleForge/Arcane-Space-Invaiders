@@ -1,0 +1,5 @@
+other.data.take_hit(1);
+
+
+
+ 

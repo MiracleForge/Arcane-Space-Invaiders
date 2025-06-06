@@ -6,5 +6,13 @@
 };
 
 Special Effects - {
-    Flame Rockets
+    Flame Rockets -- shaders - ok
+}
+
+Criar object pools - {
+    Add bullets ao objeto pool
+    Verificar se existe essa bullet no objeto pulls,
+    se Existe usar 
+    Se não existe , criar
+    
 }

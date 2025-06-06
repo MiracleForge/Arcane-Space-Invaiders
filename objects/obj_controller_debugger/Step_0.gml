@@ -3,7 +3,7 @@ if (keyboard_check_pressed(vk_f1)) {
 }
 
 if (show_debug_info) {
-    show_debug_overlay(true)
+    //show_debug_overlay(true)
     debug_text = [];
     array_push(debug_text, "FPS: " + string(fps));
     array_push(debug_text, "Mouse X/Y: " + string(mouse_x) + " / " + string(mouse_y));
@@ -14,6 +14,11 @@ if (show_debug_info) {
             array_push(other.debug_text, "y velocit: " + string(vspeed));
             array_push(other.debug_text, "Angle: " + string(image_angle));
             array_push(other.debug_text, "SubImage: " + string(image_number));
+            array_push(other.debug_text, "Health: " + string(data.metalic_belt));
+            array_push(other.debug_text, "Is_damaged: " + string(data.is_damaged));
+            array_push(other.debug_text, "Alarm[1]: " + string(alarm[1]));
+            array_push(other.debug_text, "Over Heat Status: " + string(data.overheat_status));
+            
             draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
         }
     }
