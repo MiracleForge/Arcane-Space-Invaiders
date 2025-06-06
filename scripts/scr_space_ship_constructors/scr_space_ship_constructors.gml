@@ -92,19 +92,19 @@ function ShipCeruleanCreate(_owner) constructor {
         var _t = current_time * 0.01;
         flash_strength = abs(sin(_t));
     
-        shader_set(sh_flash);
-        var _u_flash = shader_get_uniform(sh_flash, "u_flash_strength");
+        shader_set(sh_flash_blink);
+        var _u_flash = shader_get_uniform(sh_flash_blink, "u_flash_strength");
         shader_set_uniform_f(_u_flash, flash_strength);
         draw_sprite(owner.sprite_index, -1, owner.x, owner.y);
         shader_reset();
     });
 
 
-    
     ///@description Destroy and animate the destroction of spaceship.
     destroy = method(self, function(_instance_ = owner.id) {
         instance_destroy(_instance_);
     });
+    
 
     ///@description Draw methods for rocket flame logic.
     draw_rocket_flame = method(self, function() {
@@ -151,6 +151,7 @@ function ShipEmberStrikeCreate(_owner) : ShipCeruleanCreate(_owner) constructor 
             var _missile = new SrcProjectileMissileCreate();
             var _inst = instance_create_layer(owner.x, owner.y - _half_h, "bullets", obj_projectile_missil, _missile);
             _missile_timer = _missile.cooldown;
+         
         }
     });
     
@@ -182,5 +183,4 @@ function ShipEmberStrikeCreate(_owner) : ShipCeruleanCreate(_owner) constructor 
         
         shader_reset();
     });
-    
 };

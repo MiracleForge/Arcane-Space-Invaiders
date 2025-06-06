@@ -1,3 +1,11 @@
+if (sprite_index == spr_uss_ember_strike) {
+    draw_self();
+};
+
 data.draw_rocket_flame();
-draw_self();
+
+if (sprite_index != spr_uss_ember_strike) {
+    draw_self();
+};
+
 data.flash_hit();

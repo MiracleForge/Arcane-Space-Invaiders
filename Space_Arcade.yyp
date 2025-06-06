@@ -87,6 +87,7 @@
     {"id":{"name":"spr_enemy_pawn","path":"sprites/spr_enemy_pawn/spr_enemy_pawn.yy",},},
     {"id":{"name":"spr_micelaniuns_icons","path":"sprites/spr_micelaniuns_icons/spr_micelaniuns_icons.yy",},},
     {"id":{"name":"spr_missile_basic","path":"sprites/spr_missile_basic/spr_missile_basic.yy",},},
+    {"id":{"name":"spr_missile_basic2","path":"sprites/spr_missile_basic2/spr_missile_basic2.yy",},},
     {"id":{"name":"spr_procrastinando","path":"sprites/spr_procrastinando/spr_procrastinando.yy",},},
     {"id":{"name":"spr_projectiles_icons","path":"sprites/spr_projectiles_icons/spr_projectiles_icons.yy",},},
     {"id":{"name":"spr_rockets_red_variant_1","path":"sprites/spr_rockets_red_variant_1/spr_rockets_red_variant_1.yy",},},
