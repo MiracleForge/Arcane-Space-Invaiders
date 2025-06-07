@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_player_moviment_state",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_player_moviment_state",
+  "parent":{
+    "name":"player_states_machnes",
+    "path":"folders/Scripts/state_machines/player_states_machnes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

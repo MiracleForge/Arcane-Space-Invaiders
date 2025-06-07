@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"const_player_mecanics",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"const_player_mecanics",
+  "parent":{
+    "name":"Mecanics",
+    "path":"folders/Scripts/constants/Mecanics.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

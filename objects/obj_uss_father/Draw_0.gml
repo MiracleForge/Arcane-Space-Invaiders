@@ -1,11 +1,8 @@
-if (sprite_index == spr_uss_ember_strike) {
-    draw_self();
-};
+var _is_ember_strike = (sprite_index == spr_uss_ember_strike);
 
-data.draw_rocket_flame();
+if !_is_ember_strike data.draw_rocket_flame(); // draw below the sprite
 
-if (sprite_index != spr_uss_ember_strike) {
-    draw_self();
-};
+draw_self(); // always draw the sprite
+data.flash_hit(); // always draw the flash on top
 
-data.flash_hit();
+if _is_ember_strike data.draw_rocket_flame(); // draw the flame again, on top of the sprite and flash

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_ship_cerulean_constructor",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_ship_cerulean_constructor",
+  "parent":{
+    "name":"player_constructors",
+    "path":"folders/Scripts/constructors/player_constructors.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_debugger_spaw_func",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_debugger_spaw_func",
+  "parent":{
+    "name":"debugger",
+    "path":"folders/Scripts/debugger.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
